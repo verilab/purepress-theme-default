@@ -1,4 +1,4 @@
-{% if config.DISQUS_ENABLED %}
+{% if user_config.disqus_enabled %}
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">
@@ -7,7 +7,7 @@
     </h3>
   </div>
   <div class="panel-body markdown-body">
-    {% if config.DISQUS_ENABLED %}
+    {% if user_config.disqus_enabled %}
     {% include 'discuss/disqus.html' %}
     {% endif %}
   </div>
