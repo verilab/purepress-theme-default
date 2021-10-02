@@ -30,12 +30,14 @@
     {% if entry.updated and entry.updated != entry.created %}
     <span><i class="fa fa-fw fa-refresh"></i>{{ entry.updated.strftime('%Y.%m.%d') }}</span>
     {% endif %}
+    {% if entry.tags %}
     <span>
       <i class="fa fa-fw fa-tags"></i>
       {%- for tag in entry.tags -%}
       {% if loop.index > 1 %}<span>, </span>{% endif %}<a href="{{ url_for('tag', name=tag) }}">{{ tag }}</a>
       {%- endfor -%}
     </span>
+    {% endif %}
   </div>
 </div>
 
